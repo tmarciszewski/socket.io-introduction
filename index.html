@@ -110,10 +110,9 @@
         </div>
     </section>
 
-    <section class="slide">
-        <div>
-            <h2>Not all messages are created equal</h2>
-            <p>Volatile</p>
+    <section class="slide cover">
+        <div><!-- namespaces -->
+            <img src="http://john.ellingsworth.org/wp-content/uploads/2009/04/ellingsworth_names_1860_census.jpg" alt="">
         </div>
     </section>
 
@@ -121,9 +120,47 @@
         <div>
             <h2>Rooms and Namespaces</h2>
             <ul>
+                <li>Ways of multiplexing single socket.io connection</li>
                 <li>They are using single connection</li>
-                <li>Rooms can created be inside namespaces</li>
-                
+                <li>Rooms can be created inside namespaces</li>
+            </ul>
+        </div>
+    </section>
+
+
+
+
+<!--     <section class="slide">
+        <div>
+            <script src="https://gist.github.com/tmarciszewski/dafaaf0efbac9aba3bd0.js"></script>
+        </div>
+    </section> -->
+
+    <section class="slide cover">
+        <div><!-- rooms -->
+            <img src="http://i2.wp.com/digiday.com/wp-content/uploads/2014/01/cubicles.jpg" alt="">
+        </div>
+    </section>
+    
+    <section class="slide">
+        <div>
+            <h2>Rooms</h2>
+            <ul>
+                <li>You can join many rooms at once</li>
+                <li>You need to rejoin rooms after every reconnect</li>
+                <li>You can dynamically join and leave rooms</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="slide">
+        <div>
+            <h2>Namespaces</h2>
+            <ul>
+                <li>Each connection is namespaced (default namespace is /)</li>
+                <li>Each namespace emits its own "connection" and "disconnect" events</li>
+                <li>Client cannot connect to namespace if it's not "created" on the server</li>
+                <li>You are connecting to namespace so there is no need to rejon after reconnect</li>
             </ul>
         </div>
     </section>
@@ -138,6 +175,25 @@
             </ol>
         </div>
     </section>
+
+    <section class="slide">
+        <div>
+            <h2>Not all messages are created equal</h2>
+            <p>Volatile Messages</p>
+            <ul>
+                <li>If it wont hurt you application if some of the messages are dropped</li>
+                <li>
+                    When messages are dropped?
+                    <ul>
+                        <li>When network is slow</li>
+                        <li>When application is slow</li>
+                        <li>When transport is polling and is in the middle of a request-response cycle</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </section>
+
     
     <section class="slide cover">
         <div><!-- polling -->
@@ -157,14 +213,6 @@
         </div>
     </section>
 
-<!--     <section class="slide shout">
-        <div>
-            <h2>Too much information</h2>
-        </div>
-    </section> -->
-
-    
-
     <section class="slide cover">
         <div><!-- security -->
             <img src="http://media.giphy.com/media/UuIpr1iwXkRgY/giphy.gif" alt="">
@@ -176,12 +224,6 @@
             <h2>Security</h2>
         </div>
     </section>
-
-    <!-- <section class="slide cover">
-        <div>
-            <img src="http://2.bp.blogspot.com/-eIVcdDYY1kk/U1GUenUdHhI/AAAAAAADWKM/aiqm--FBCQo/s1600/patient-bear.gif" alt="">
-        </div>
-    </section> -->
 
     <section class="slide">
         <div>
