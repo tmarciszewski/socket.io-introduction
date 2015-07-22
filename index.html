@@ -120,34 +120,13 @@
         </div>
     </section>
 
-<!--     <section class="slide">
-        <div>
-            <h2>Rooms and Namespaces</h2>
-            <ul>
-                <li>Ways of multiplexing single socket.io connection</li>
-                <li>They are using single connection</li>
-                <li>Rooms can be created inside namespaces</li>
-            </ul>
-        </div>
-    </section> -->
-
-
-    <section class="slide cover">
-        <div><!-- rooms -->
-            <img src="http://i2.wp.com/digiday.com/wp-content/uploads/2014/01/cubicles.jpg" alt="">
-        </div>
-    </section>
-    
     <section class="slide">
         <div>
-            <h2>Rooms</h2>
             <ul>
-                <li>You can join/leave room AFTER you are connected</li>
-                <li>Think about it as filters for received messages</li>
-                <li>You can join many rooms at once</li>
-                <li>You need to rejoin rooms after every reconnect</li>
-                <li>A little "room" is created for every user (with it's ID as name)</li>
+                <li>http://warsawjs.4screens.net/example-broadcast</li>
+                <li>goo.gl/ml00Ea</li>
             </ul>
+            <img style="display: block; height: 50%; margin: auto;" src="goo.gl/ml00Ea.qr"></img>  
         </div>
     </section>
 
@@ -169,17 +148,35 @@
         </div>
     </section>
 
+    <section class="slide cover">
+        <div><!-- rooms -->
+            <img src="http://i2.wp.com/digiday.com/wp-content/uploads/2014/01/cubicles.jpg" alt="">
+        </div>
+    </section>
+    
+    <section class="slide">
+        <div>
+            <h2>Rooms</h2>
+            <ul>
+                <li>You can join/leave room AFTER you are connected</li>
+                <li>Think about it as filters for received messages</li>
+                <li>You can join many rooms at once</li>
+                <li>You need to rejoin rooms after every reconnect</li>
+                <li>A little "room" is created for every user (with it's ID as name)</li>
+            </ul>
+        </div>
+    </section>
+
     <section class="slide">
         <div>
             <h2>Not all messages are created equal - Volatile Messages</h2>
             <ul>
                 <li>If it wont hurt you application if some of the messages are dropped</li>
-                <li>
-                    When messages are dropped?
+                <li>When are messages dropped?
                     <ul>
                         <li>When network is slow</li>
                         <li>When application is slow</li>
-                        <li>When transport is polling and is in the middle of a request-response cycle</li>
+                        <li>When transport is polling and is in the middle of reconnecting</li>
                     </ul>
                 </li>
             </ul>
@@ -215,18 +212,6 @@
         </div>
     </section>
 
-    <!--<section class="slide shout">
-        <div>
-            <h2>Security</h2>
-        </div>
-    </section>
-
-    <section class="slide cover">
-        <div>
-            <img src="http://media.giphy.com/media/UuIpr1iwXkRgY/giphy.gif" alt="">
-        </div>
-    </section> -->
-
     <section class="slide">
         <div>
             <h2>What happens when you suddenly get successful?</h2>
@@ -236,13 +221,20 @@
 
     <section class="slide">
         <div>
-            <h2>Anything with pub-sub works</h2>
+            <h2>Adapter - Anything with pub-sub works</h2>
             <ul>
                 <li>Redis</li>
                 <li>ZeroMQ</li>
                 <li>...</li>
                 <li>Profit?</li>
             </ul>            
+        </div>
+    </section>
+
+    <section class="slide">
+        <div>
+            <h2>Emitter</h2>
+            <p>Emit messages from outside of node/socket thread like a boss</p>        
         </div>
     </section>
 
@@ -254,7 +246,10 @@
 
     <section class="slide">
         <div>
-            <h2>http://warsawjs.4screens.net/example-ball</h2>
+            <ul>
+                <li>http://warsawjs.4screens.net/example-ball</li>
+                <li>http://goo.gl/7R8Wne</li>
+            </ul>
             <img style="display: block; height: 50%; margin: auto;" src="http://goo.gl/7R8Wne.qr"></img>  
         </div>
     </section>
@@ -268,7 +263,10 @@
 
     <section class="slide">
         <div>
-            <h2>http://warsawjs.4screens.net/example-ball</h2>
+            <ul>
+                <li>http://warsawjs.4screens.net/example-dots</li>
+                <li>http://goo.gl/Z123Nn</li>
+            </ul>
             <img style="display: block; height: 50%; margin: auto;" src="http://goo.gl/Z123Nn.qr"></img>  
         </div>
     </section>
