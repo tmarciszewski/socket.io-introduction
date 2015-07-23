@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Simple example</title>
+    <script src="/socket.io/socket.io.js"></script>
+  </head>
+  <body>
+    <img id="testImg"></img>
+    <h1 id="testDiv"></h1>
+    <script>
+      var testDiv = document.getElementById('testDiv');
+      var testImg = document.getElementById('testImg');
+      var socket = io();
+
+      var time = 2000;
+      function getImage() {
+        socket.emit('get-image');
+        setTimeout(getImage, time);
+      }
+      getImage();
+
+      socket.on('image', function(msg) {
+        testDiv.innerHTML = msg;
+        testImg.setAttribute('src', msg);
+      });
+
+      
+    </script>
+  </body>
+</html>

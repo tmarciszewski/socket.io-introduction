@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Rooms example</title>
+    <script src="/socket.io/socket.io.js"></script>
+  </head>
+  <input type="text" style="width: 800px" id="testInput"></input>
+  <button onclick="sendMessage()" id="testButton">Send</button>
+  <body>
+    <script>
+      var socket = io();
+
+      var testInput = document.getElementById('testInput');
+      function sendMessage() {
+        socket.emit('userMsg', testInput.value);
+      }
+      
+      function joinRoom(roomName) {
+        socket.emit('joinRoom', roomName);
+      }
+
+      function leaveRoom(roomName) {
+        socket.emit('leaveRoom', roomName);
+      }
+      
+      joinRoom('room1');
+
+      socket.on('msg', function(msg) {
+        console.log(msg);
+      });
+      
+    </script>
+  </body>
+</html>

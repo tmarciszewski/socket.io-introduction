@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en" ng-app="BallApp">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Lets play ball</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+    <style>
+      .myPoints { background-color: red; }
+    </style>
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body ng-controller="GameController as game">
+    <div class="container">
+      <h2 class="text-center">Lets play ball</h2>
+
+      <div class="row">
+
+        <div class="col-xs-12 text-center">
+          <button ng-if="game.myBall" class="btn btn-danger btn-lg" ng-click="game.passBall()">YOU GOT BALL - click to pass it</button>
+
+          <div ng-if="!game.myBall">You dont have the ball :-( Wait for it!</div>
+        </div>
+      </div>
+      <div class="row">
+        &nbsp;
+      </div>
+      <h3>Info</h3>
+      <div class="row">
+        <div class="col-xs-12">
+          <span>Number of users:</span> <span><b>{{game.clientCount}}</b></span>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-12">
+          <span>Transport type:</span> <span><b>{{game.getTransportType()}}</b></span>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-12">
+          <span>Who has ball:</span> <span><b>{{game.hasBall}}</b></span>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-12">
+          <span>My ID:</span> <span><b>{{game.getMyId()}}</b></span>
+        </div>
+      </div>
+
+      <h3>Leaderboard</h3>
+      <div class="row" ng-repeat="score in game.points | orderBy : '-points'">
+        <div class="col-xs-12">
+          <span class="badge">#{{ $index + 1 }}</span> <span ng-class="{ 'myPoints': game.getMyId() === score.id }" class="badge">{{score.id}} {{game.getMyId() === score.id}}: {{score.points}} </span>
+        </div>
+      </div>
+
+      
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
+    <script src="/example-ball/app.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  </body>
+</html>

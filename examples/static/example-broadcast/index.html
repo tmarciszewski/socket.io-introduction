@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Simple example - broadcast</title>
+    <script src="/socket.io/socket.io.js"></script>
+  </head>
+  <body>
+    <img id="testImg"></img>
+    <h1 id="testDiv"></h1>
+    
+
+    <script>
+      var testDiv = document.getElementById('testDiv');
+      var testImg = document.getElementById('testImg');
+      var socket = io();
+      
+      socket.on('example-broadcast-image', function(msg) {
+        testDiv.innerHTML = msg;
+        testImg.setAttribute('src', msg);
+      });
+    </script>
+  </body>
+</html>
+
